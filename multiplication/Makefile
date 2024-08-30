@@ -1,13 +1,13 @@
-all: add_numbers
+all: multiplication.exe
 
-add_numbers: mul_numbers.cpp
-	g++ -o mul_numbers mul_numbers.cpp
+multiplication.exe: multiplication.cpp
+	g++ -o multiplication.exe multiplication.cpp
 
-dump: mul_numbers
-	objdump -d mul_numbers.exe > mul_numbers.asm
+dump: multiplication.exe
+	objdump -d multiplication.exe > multiplication.exe.asm
 
 clean:
-	del /Q -f mul_numbers.exe mul_numbers.asm
+	rm -f multiplication.exe multiplication.exe.asm
 
-run: mul_numbers
-	./mul_numbers.exe
+run: multiplication.exe
+	./multiplication.exe
