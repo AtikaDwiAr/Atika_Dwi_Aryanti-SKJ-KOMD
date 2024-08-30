@@ -1,13 +1,13 @@
-all: add_numbers
+all: add_numbers.exe
 
-add_numbers: add_numbers.cpp
-	g++ -o add_numbers add_numbers.cpp
+add_numbers.exe: add_numbers.cpp
+	g++ -o add_numbers.exe add_numbers.cpp
 
-dump: add_numbers
-	objdump -d add_numbers.exe > add_numbers.asm
+dump: add_numbers.exe
+	objdump -d add_numbers.exe > add_numbers.exe.asm
 
 clean:
-	del /Q -f add_numbers.exe add_numbers.asm
+	rm -f add_numbers.exe add_numbers.exe.asm
 
-run: add_numbers
+run: add_numbers.exe
 	./add_numbers.exe
